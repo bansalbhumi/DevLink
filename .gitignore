@@ -1,0 +1,7 @@
+venv/
+__pycache__/
+*.pyc
+devlink.db
+devlink.db-wal
+devlink.db-shm
+.env
