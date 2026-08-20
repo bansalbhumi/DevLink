@@ -1,21 +1,22 @@
-# DevLink
+# DevLink 🔗
+A high-performance, serverless URL shortening service with built-in click analytics. 
 
-Built this to understand how URL shorteners actually work under the hood.
-Turns any URL into a 6-character short code using Base62 encoding.
+**[Live Demo](https://dev-link-lyart-eight.vercel.app/)** 
 
-Stack: FastAPI, SQLite, Docker
+## 🚀 Tech Stack
+* **Backend:** Python, FastAPI
+* **Database:** PostgreSQL (Neon)
+* **Deployment:** Vercel (Serverless Functions)
+* **Algorithms:** Base62 Encoding
 
-## Link 
-[https://dev-link-lyart-eight.vercel.app/](https://dev-link-lyart-eight.vercel.app/)
+## ✨ Key Features
+* **Collision-Resistant Shortening:** Utilizes Base62 encoding with a retry-logic mechanism to generate highly unique, compact short codes.
+* **Click Analytics:** Tracks total visits and unique IP addresses per link, stored efficiently in PostgreSQL.
+* **Optimized Routing:** Implements a `UNIQUE INDEX` on short codes for $O(\log n)$ database lookups, ensuring lightning-fast redirects.
+* **Stateless Architecture:** Fully decoupled, serverless deployment on Vercel for infinite horizontal scaling.
 
-## Endpoints
-
-- `POST /shorten` — needs `X-Api-Key` header, returns short code
-- `GET /{code}` — redirects to original URL, logs the click
-- `GET /stats/{code}` — returns click count and unique IP count
-
-## Run it
-
-Using Docker:
-```bash
-docker-compose up
+## 🛠️ Local Setup
+1. Clone the repository: `git clone https://github.com/bansalbhumi/DevLink.git`
+2. Install dependencies: `pip install -r requirements.txt`
+3. Create a `.env` file based on `.env.example` and add your PostgreSQL connection string.
+4. Run the server: `uvicorn main:app --reload`
