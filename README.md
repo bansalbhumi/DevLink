@@ -5,6 +5,9 @@ Turns any URL into a 6-character short code using Base62 encoding.
 
 Stack: FastAPI, SQLite, Docker
 
+## Link 
+[https://dev-link-lyart-eight.vercel.app/](https://dev-link-lyart-eight.vercel.app/)
+
 ## Endpoints
 
 - `POST /shorten` — needs `X-Api-Key` header, returns short code
